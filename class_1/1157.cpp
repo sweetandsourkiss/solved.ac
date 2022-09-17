@@ -6,17 +6,15 @@ int main() {
 	getline(cin, str);
 
 	for (int i = 0; i < str.size(); i++) {
-		if ('a' <= str[i] && str[i] <= 'z') {
-			str[i] -= 32;
-		}
+		str[i] = toupper(str[i]);
 	}
 	int max = 0;
-	char max_word;
+	char max_word='A';
 	int temp = 0;
 	int button = 0;
-	char word = 'A';
+	
 
-	for (word; word == 'Z'; word++) {
+	for (char word = 'A'; word <= 'Z'; word++) {
 		for (int i = 0; i < str.size(); i++) {
 			if (str[i] == word) {
 				temp++;
@@ -32,6 +30,7 @@ int main() {
 		}
 		temp = 0;
 	}
+
 	if (button == 1) {
 		cout << '?';
 	}
